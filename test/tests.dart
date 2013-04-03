@@ -47,6 +47,15 @@ main() {
       expect(hamming("dart","d"), equals(-1));
     });
   });
+  
+  group('Damerau-Levenshtein Distance', () {
+      test("General", (){
+        expect(damerau_levenshtein("test","test"), equals(0));
+        expect(damerau_levenshtein("test","tent"), equals(1));
+        expect(damerau_levenshtein("CA", "ABC"), equals(3));
+        expect(damerau_levenshtein("dart","d"), equals(3));
+      });
+  });
 }
 
 int longer(String str1, String str2) {
